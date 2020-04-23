@@ -25,7 +25,7 @@
 \#####################################################*/
 
 
-
+var addElementButton = document.getElementById("add-element-button");
 
 
 /*#####################################################\
@@ -55,7 +55,9 @@
 \#####################################################*/
 
 
-
+addElementButton.addEventListener("click", function(){
+    console.log("you clicked the add-element button!");
+})
 
 
 /*#####################################################\
