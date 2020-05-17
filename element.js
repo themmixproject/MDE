@@ -1,4 +1,4 @@
-console.log("element.js file is loaded!");
+console.log("element.js is loaded!");
 function element (elementTag, elementId, elementClass) {
     this.tag = elementTag;
     if(this.tag==""){
@@ -7,7 +7,3 @@ function element (elementTag, elementId, elementClass) {
     this.id = elementId;
     this.class = elementClass;
 }
-
-var myElement = new element("", "elementStuff", "myClass");
-
-console.log(myElement);

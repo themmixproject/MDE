@@ -67,5 +67,5 @@ addElementButton.addEventListener("click", function(){
 \#####################################################*/
 
 
-console.log("hello world!");
+console.log("MDE.js is loaded!");
 
