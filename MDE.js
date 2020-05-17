@@ -27,6 +27,8 @@
 
 var addElementButton = document.getElementById("add-element-button");
 
+var elementListContainer = document.getElementById("element-list-container");
+
 
 /*#####################################################\
  *|                                                    #
