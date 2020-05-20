@@ -1,3 +1,7 @@
+body {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+
 #editor-header-nav ul {
     list-style: none;
     background-color: rgb(49, 145, 223);
@@ -19,8 +23,83 @@
 
 #editor-page-content {
     padding-top: 40px;
+    overflow: hidden;
 }
 
+#element-creation-form {
+    padding: 10px;
+    background-color: lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.element-creation-input-container {
+    margin: 10px;
+}
+
+.element-creation-input-label {
+    float: left;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+
+    font-size: 20px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.element-creation-input-width-wrapper {
+    display: block;
+    overflow: hidden;
+}
+
+.element-creation-input {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    box-sizing : border-box;
+    border: none;
+    width: 100%;
+    height: 40px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.element-creation-button-container{
+    margin-top: 10px;
+}
+
+.element-creation-button {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0px;
+    width: 50%;
+    font-size: large;
+    float: left;
+    padding: 15px 0px;
+    border: 2px solid black;
+    background: none;
+    background: rgba(0,0,0,.3);
+    display: block;
+}
+
+.element-creation-button:enabled {
+    outline: none;
+    border: none;
+    border: 2px solid black;
+}
+
+.element-creation-button:active {
+    outline: none;
+    border: none;
+    border: 2px solid black;
+}
 
 #add-element-button {
     text-align: center;
