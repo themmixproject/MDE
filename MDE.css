@@ -75,7 +75,7 @@ body {
     font-family:'Courier New', Courier, monospace;
     font-weight: bold;
     font-size: 20px;
-    background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgb(169, 169, 169);
 }
 
 .element-creation-button-container {
@@ -96,7 +96,7 @@ body {
     text-align: center;
     padding: 15px 0px;
 
-    background: rgba(0,0,0,.3);
+    background: rgb(147, 147, 147);
     
     font-family: 'Courier New', Courier, monospace;
     font-size: 18px;
@@ -126,8 +126,9 @@ body {
 #add-element-button {
     text-align: center;
     font-size: 36px;
-    background-color: rgb(199, 199, 199);
+    background: rgb(147, 147, 147);
 
     margin: 5px;
+    padding: 10px 0px;
     border: 2px solid black;
 }
