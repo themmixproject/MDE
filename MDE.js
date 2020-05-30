@@ -43,7 +43,7 @@ var elementListContainer = document.getElementById("element-list-container");
 /*#####################################################\
  *|                                                    #
  *| 3. display functions                               #
- *|                                                    # 
+ *|                                                    #
 \#####################################################*/
 
 
@@ -53,7 +53,7 @@ var elementListContainer = document.getElementById("element-list-container");
 /*#####################################################\
  *|                                                    #
  *| 4. event listeners                                 #
- *|                                                    # 
+ *|                                                    #
 \#####################################################*/
 
 
@@ -65,7 +65,7 @@ addElementButton.addEventListener("click", function(){
 /*#####################################################\
  *|                                                    #
  *| 5. initialization                                  #
- *|                                                    # 
+ *|                                                    #
 \#####################################################*/
 
 
