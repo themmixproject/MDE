@@ -1,6 +1,31 @@
+/*
+
+    ~Index MDE.css~
+    ----------------------
+
+    1. body
+    2. header and header-nav
+    3. editor page
+        3.1 element creation form
+        3.2 add element button
+
+*/
+
+/*#####################################################\
+ *|                                                    #
+ *| 1. body                                            #
+ *|                                                    #
+\#####################################################*/
+
 body {
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
 }
+
+/*#####################################################\
+ *|                                                    #
+ *| 2. header and header-nav                           #
+ *|                                                    #
+\#####################################################*/
 
 #editor-header-nav ul {
     list-style: none;
@@ -24,10 +49,22 @@ body {
     height: 40px;
 }
 
+/*#####################################################\
+ *|                                                    #
+ *| 3. editor page                                     #
+ *|                                                    #
+\#####################################################*/
+
 #editor-page-content {
     padding-top: 50px;
     overflow: hidden;
 }
+
+/*#####################################################\
+ *|                                                    #
+ *| 3.1. element creation form                         #
+ *|                                                    #
+\#####################################################*/
 
 #element-creation-form {
     padding: 10px;
@@ -76,6 +113,11 @@ body {
     font-weight: bold;
     font-size: 20px;
     background-color: rgb(169, 169, 169);
+
+    /* reset border radius on inputs */
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
 }
 
 .element-creation-button-container {
@@ -122,6 +164,12 @@ body {
     outline: none;
     border: none;
 }
+
+/*#####################################################\
+ *|                                                    #
+ *| 3.2. add element button                            #
+ *|                                                    #
+\#####################################################*/
 
 #add-element-button {
     text-align: center;
