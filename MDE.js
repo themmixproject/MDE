@@ -29,6 +29,10 @@ var addElementButton = document.getElementById("add-element-button");
 
 var elementListContainer = document.getElementById("element-list-container");
 
+var creationAddButton = document.getElementById("element-creation-add-button");
+
+var creationCancelButton = document.getElementById("element-creation-cancel-button");
+
 
 /*#####################################################\
  *|                                                    #
@@ -56,11 +60,17 @@ var elementListContainer = document.getElementById("element-list-container");
  *|                                                    #
 \#####################################################*/
 
+creationCancelButton.addEventListener("click", function(){
+    console.log("you clicked the element-creation-cancel button!");
+});
+
+creationAddButton.addEventListener("click", function(){
+    console.log("you clicked the element-creation-add button!");
+});
 
 addElementButton.addEventListener("click", function(){
     console.log("you clicked the add-element button!");
 })
-
 
 /*#####################################################\
  *|                                                    #
