@@ -125,19 +125,18 @@ body {
     overflow: hidden;
 }
 
-.element-creation-button-width {
+.element-creation-button-width-wrapper {
     width: 50%;
     float: left;
 }
 
 .element-creation-button {
-    width: 100%;
-
     display: block;
 
     text-align: center;
     padding: 15px 0px;
 
+    border: 2px solid black;
     background: rgb(147, 147, 147);
     
     font-family: 'Courier New', Courier, monospace;
@@ -147,12 +146,10 @@ body {
 
 .element-creation-button-margin-left {
     margin-left: 5px;
-    border: 2px solid black;
 }
 
 .element-creation-button-margin-right {
     margin-right: 5px;
-    border: 2px solid black;
 }
 
 .element-creation-button:enabled {
