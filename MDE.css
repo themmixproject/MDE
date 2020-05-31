@@ -130,10 +130,9 @@ body {
 }
 
 .element-creation-button {
-    display: block;
-
+    height: 40px;
+    line-height: 40px;
     text-align: center;
-    padding: 15px 0px;
 
     border: 2px solid black;
     background: rgb(147, 147, 147);
