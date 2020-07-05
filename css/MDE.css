@@ -7,6 +7,7 @@
     2. body
     3. header and header-nav
     4. editor page
+        4.1 element list item
         4.1 element creation form
         4.2 add element button
 
@@ -24,7 +25,7 @@
 
 .code-line {
     font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    color: black;
+    color: rgb(248, 248, 242);
 }
 
 .half-width-container {
@@ -45,7 +46,49 @@
     margin-right: 5px;
 }
 
+.generic-ui-button {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
 
+    background: rgb(108, 108, 113);
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    /* font-family: 'Courier New', Courier, monospace; */
+    font-size: 18px;
+    font-weight: bold;
+    border:0;
+    color: inherit;
+}
+
+.generic-ui-button:hover {
+    cursor: default;
+}
+
+.generic-container {
+    background-color: rgb(76, 76, 76);
+    overflow: hidden;
+    font-size: 20px;
+    margin: 5px;
+}
+
+/*#####################################################\
+ *|                                                    #
+ *| 2. code.css                                        #
+ *|                                                    #
+\#####################################################*/
+
+.code-line {
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    color: rgb(248, 248, 242);
+}
+
+.code-string {
+    color: rgb(230, 219, 116);
+}
+
+.code-variable-tag {
+    color: rgb(166, 226, 46);
+}
 
 /*#####################################################\
  *|                                                    #
@@ -56,6 +99,8 @@
 body {
     /* font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; */
     font-family: Arial, Helvetica, sans-serif;
+    color: rgb(248, 248, 242);
+    background-color: #272822;
 }
 
 /*#####################################################\
@@ -66,22 +111,18 @@ body {
 
 #editor-header-nav ul {
     list-style: none;
-    background-color: rgb(49, 145, 223);
     text-align: center;
     padding: 0;
     margin: 0;
     box-shadow: 0 0 16px rgba(0,0,0,.28);
-    color: black;
-    border-bottom: 2px solid black;
-    background-color: lightgray;
-
+    background-color: rgb(119, 119, 119);
     position: fixed;
     width: 100%;
 }
 
 .editor-header-nav-item{
     font-family: 'Oswald', sans-serif;
-    font-size: 1.2em;
+    font-size: 20px;
     line-height: 40px;
     height: 40px;
 }
@@ -97,71 +138,39 @@ body {
     overflow: hidden;
 }
 
-.element-list-item {
-    background-color: lightgray;
-
-    overflow: hidden;
-
-    font-size: 20px;
-
-    margin: 5px;
-    border: 2px solid black;
-
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    overflow: hidden;
-}
-
-.element-list-item-tag {
-    background-color: rgba(0, 0, 0, 0.226);
-    padding: 3px;
-    font-style: italic;
-    border: 2px solid black;
-    margin: 10px;
-}
-
-.element-list-item-attribute {
-    margin: 10px;
-    border: 2px solid black;
-    padding: 3px;
-}
-
-.element-list-item-button {
-    height: 30px;
-    line-height: 30px;
-    text-align: center;
-
-    border: 2px solid black;
-    background: rgb(147, 147, 147);
-    
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 18px;
-    font-weight: bold;
-}
-
     /*#####################################################\
     *|                                                     #
-    *| 4.1 element creation form                           #
+    *| 4.1 element list item                               #
     *|                                                     #
     \#####################################################*/
 
-    #element-creation-form {
-        background-color: lightgray;
-        font-family: 'Courier New', Courier, monospace;
-        overflow: hidden;
-        box-sizing: border-box;
-
-        margin: 5px;
-        border: 2px solid black;
+    .element-list-item-tag {
+        background-color: rgba(0, 0, 0, 0.226);
+        color: rgb(249, 38, 114);
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font-style: italic;
+        padding: 10px;
     }
+
+    .element-list-item-attribute {
+        margin: 10px;
+        padding: 3px;
+    }
+
+    /*#####################################################\
+    *|                                                     #
+    *| 4.2 element creation form                           #
+    *|                                                     #
+    \#####################################################*/
 
     .element-creation-input-container {
         margin: 10px;
-        border: 2px solid black;
+        font-family: 'Courier New', Courier, monospace;
     }
 
     .element-creation-input-label {
         float: left;
-        width: 100px;
+        width: 97px;
         height: 40px;
         line-height: 40px;
 
@@ -186,10 +195,13 @@ body {
         padding-left: 10px;
         padding-right: 10px;
 
-        font-family:'Courier New', Courier, monospace;
+        /* font-family:'Courier New', Courier, monospace; */
+        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
         font-weight: bold;
         font-size: 20px;
-        background-color: rgb(169, 169, 169);
+        /* color: rgb(248, 248, 242); */
+        background-color: inherit;
+        border-bottom: 2px solid rgb(169, 169, 169);
     }
 
     .element-creation-button-container {
@@ -197,36 +209,14 @@ body {
         overflow: hidden;
     }
 
-    .element-creation-button-width-wrapper {
-        width: 50%;
-        float: left;
-    }
-
-    .element-creation-button {
-        height: 40px;
-        line-height: 40px;
-        text-align: center;
-
-        border: 2px solid black;
-        background: rgb(147, 147, 147);
-        
-        font-family: 'Courier New', Courier, monospace;
-        font-size: 18px;
-        font-weight: bold;
-    }
-
     /*#####################################################\
     *|                                                     #
-    *| 4.2 add element button                              #
+    *| 4.3 add element button                              #
     *|                                                     #
     \#####################################################*/
 
     #add-element-button {
-        text-align: center;
         font-size: 36px;
-        background: rgb(147, 147, 147);
-
         margin: 5px;
         padding: 10px 0px;
-        border: 2px solid black;
     }
