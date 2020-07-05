@@ -52,8 +52,7 @@
     text-align: center;
 
     background: rgb(108, 108, 113);
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
-    /* font-family: 'Courier New', Courier, monospace; */
+    font-family: Consolas,'Courier New', Courier, monospace;
     font-size: 18px;
     font-weight: bold;
     border:0;
@@ -78,7 +77,7 @@
 \#####################################################*/
 
 .code-line {
-    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+    font-family: Consolas,'Courier New', Courier, monospace;
     color: rgb(248, 248, 242);
 }
 
@@ -87,6 +86,10 @@
 }
 
 .code-variable-tag {
+    color: rgb(249, 38, 114);
+}
+
+.code-constant-attribute {
     color: rgb(166, 226, 46);
 }
 
@@ -97,7 +100,6 @@
 \#####################################################*/
 
 body {
-    /* font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif; */
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(248, 248, 242);
     background-color: #272822;
@@ -146,8 +148,7 @@ body {
 
     .element-list-item-tag {
         background-color: rgba(0, 0, 0, 0.226);
-        color: rgb(249, 38, 114);
-        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font-family: Consolas,'Courier New', Courier, monospace;
         font-style: italic;
         padding: 10px;
     }
@@ -165,7 +166,7 @@ body {
 
     .element-creation-input-container {
         margin: 10px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: Consolas,'Courier New', Courier, monospace;
     }
 
     .element-creation-input-label {
@@ -195,11 +196,11 @@ body {
         padding-left: 10px;
         padding-right: 10px;
 
-        /* font-family:'Courier New', Courier, monospace; */
-        font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace, serif;
+        font-family: Consolas,'Courier New', Courier, monospace;
         font-weight: bold;
         font-size: 20px;
-        /* color: rgb(248, 248, 242); */
+        
+        caret-color: currentColor;
         background-color: inherit;
         border-bottom: 2px solid rgb(169, 169, 169);
     }
