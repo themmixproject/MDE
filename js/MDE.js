@@ -40,7 +40,79 @@ var creationCancelButton = document.getElementById("element-creation-cancel-butt
  *|                                                    #
 \#####################################################*/
 
+function createElementListItem(tag, id, className){
 
+
+    var listItem = document.createElement("div");
+    listItem.className = "element-list-item generic-container";
+    elementListContainer.append(listItem);
+
+
+
+    var listItemTag = document.createElement("div");
+    listItemTag.className = "element-list-item-tag code-variable-tag";
+    listItem.append(listItemTag);
+    listItemTag.innerHTML+=tag;
+
+
+
+    var attributeContainer = document.createElement("div");
+    attributeContainer.className = "element-list-item-attribute code-line";
+    listItem.append(attributeContainer);
+
+
+
+    // create id attribute
+    var attribute = document.createElement("div");
+    attribute.className = "float-line";
+    
+    // create id attribute name
+    var attributeName = document.createElement("span");
+    attributeName.className = "code-constant-attribute";
+    attribute.append(attributeName);
+    attributeName.innerHTML+= "id";
+
+    attribute.innerHTML+="=";
+
+    // create id value
+    var attributeValue = document.createElement("span");
+    attributeValue.className = "code-string";
+    attribute.append(attributeValue);
+    attributeValue.innerHTML='"'+id+'"'+"&nbsp;";
+
+    // append id attribute
+    attributeContainer.append(attribute)
+
+
+
+
+
+    // create class attribute
+    var attribute = document.createElement("div");
+    attribute.className = "float-line";
+    
+    // create class attribute name
+    var attributeName = document.createElement("span");
+    attributeName.className = "code-constant-attribute";
+    attribute.append(attributeName);
+    attributeName.innerHTML+= "class";
+
+    attribute.innerHTML+="=";
+
+    // create class value
+    var attributeValue = document.createElement("span");
+    attributeValue.className = "code-string";
+    attribute.append(attributeValue);
+    attributeValue.innerHTML='"'+className+'"';
+
+    // append class attribute
+    attributeContainer.append(attribute)
+
+    return listItem;
+
+}
+
+elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
 
 
