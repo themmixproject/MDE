@@ -82,8 +82,17 @@
     color: rgb(230, 219, 116);
 }
 
+input.code-string {
+    caret-color: rgb(230, 219, 116);
+}
+
 .code-variable-tag {
     color: rgb(249, 38, 114);
+    font-style: italic;
+}
+
+input.code-variable-tag {
+    caret-color: rgb(249, 38, 114);
 }
 
 .code-constant-attribute {
@@ -195,7 +204,6 @@ body {
         font-weight: inherit;
         font-size: 20px;
         
-        caret-color: rgb(230, 219, 116);;
         background-color: inherit;
         border-bottom: 2px solid rgb(169, 169, 169);
     }
