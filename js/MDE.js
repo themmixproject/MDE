@@ -41,9 +41,9 @@ var editorPageContent = document.getElementById("editor-page-content");
  *|                                                    #
 \#####################################################*/
 
-elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
-editorPageContent.append(createElementForm());
+// editorPageContent.append(createElementForm());
 
 /*#####################################################\
  *|                                                    #
