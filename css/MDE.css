@@ -151,29 +151,33 @@ body {
     *|                                                     #
     \#####################################################*/
 
-    .element-list-item-header {
-        background-color: rgba(0, 0, 0, 0.226);
-        font-family: inherit;
-        font-weight: inherit;
-        padding: 10px;
-        overflow: hidden;
-        line-height: 20px;
-    }
-
-    .element-list-item-delete-button{
-        float: right;
-        height: 20px;
-        width: 20px;
-    }
-
-    .element-list-item-delete-img {
-        height: 20px;
-        width: 20px;
+    .element-list-item-tag {
+        margin-bottom: 10px;
+        /* line-height: 40px; */
+        
     }
 
     .element-list-item-attribute {
+        /* margin: 10px;
+        padding: 3px; */
         margin: 10px;
-        padding: 3px;
+    }
+
+    .element-list-item-footer {
+        /* background-color: rgb(59, 59, 59); */
+        overflow: hidden;
+        margin: 10px;
+    }
+
+    .element-list-item-button {
+        float: right;
+        background-color: transparent;
+        height: 20px;
+        width: 20px;
+        font-size: 18px;
+        height: initial;
+        line-height: initial;
+        margin: 0 10px;
     }
 
     /*#####################################################\
