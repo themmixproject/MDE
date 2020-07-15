@@ -160,13 +160,18 @@ body {
     .element-list-item-attribute {
         /* margin: 10px;
         padding: 3px; */
-        margin: 10px;
+        /* margin: 10px; */
+        margin-left: 10px;
+        margin-top: 10px;
     }
 
     .element-list-item-footer {
-        /* background-color: rgb(59, 59, 59); */
         overflow: hidden;
-        margin: 10px;
+        /* padding: 5px; */
+    }
+
+    .element-list-item-button-container {
+        float: right;
     }
 
     .element-list-item-button {
@@ -177,7 +182,8 @@ body {
         font-size: 18px;
         height: initial;
         line-height: initial;
-        margin: 0 10px;
+        padding: 10px;
+        /* background-color: rgb(59, 59, 59); */
     }
 
     /*#####################################################\
