@@ -187,8 +187,18 @@ body {
     *|                                                     #
     \#####################################################*/
 
-    .element-creation-input-container {
+    .element-list-item-header {
+        font-family: inherit;
+        font-weight: inherit;
         margin: 10px;
+        margin-bottom: 0;
+        color: rgb(128, 128, 128);
+        font-style: italic;
+    }
+
+    .element-creation-input-container {
+        /* margin: 10px; */
+        margin: 0 10px;
     }
 
     .element-creation-input-label {
