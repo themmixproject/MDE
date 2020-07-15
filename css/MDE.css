@@ -42,15 +42,12 @@
 }
 
 .generic-ui-button {
-    height: 30px;
-    line-height: 30px;
     text-align: center;
-
+    /* background-color: rgb(59, 59, 59); */
     background: rgb(108, 108, 113);
     font-family: Tahoma, Geneva, sans-serif;
     font-size: 18px;
     font-weight: initial;
-    border:0;
     color: inherit;
 }
 
@@ -166,14 +163,15 @@ body {
     .element-list-item-footer {
         overflow: hidden;
         /* padding: 5px; */
+        /* background-color: rgb(59, 59, 59); */
     }
 
     .element-list-item-button-container {
-        float: right;
+        float: left;
     }
 
     .element-list-item-button {
-        float: right;
+        float: left;
         background-color: transparent;
         height: 20px;
         width: 20px;
@@ -181,7 +179,6 @@ body {
         height: initial;
         line-height: initial;
         padding: 5px 10px;
-        background-color: rgb(59, 59, 59);
     }
 
     /*#####################################################\
@@ -234,6 +231,11 @@ body {
         overflow: hidden;
     }
 
+    .element-creation-button {
+        height: 30px;
+        line-height: 30px;
+    }
+
     /*#####################################################\
     *|                                                     #
     *| 4.3 add element button                              #
@@ -244,4 +246,13 @@ body {
         font-size: 36px;
         margin: 5px;
         padding: 10px 0px;
+        display: block;
+        float: none;
+    }
+
+    #add-button-icon {
+        height: 36px;
+        width: 36px;
+        display: block;
+        margin: 0 auto;
     }
