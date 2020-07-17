@@ -47,9 +47,9 @@ var icons = {
  *|                                                    #
 \#####################################################*/
 
-elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
-elementListContainer.append(createElementForm());
+// elementListContainer.append(createElementForm());
 
 /*#####################################################\
  *|                                                    #
