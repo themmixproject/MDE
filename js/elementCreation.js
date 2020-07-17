@@ -3,11 +3,8 @@
     ~Index elementCreation.js~
     ----------------------
 
-    1. init values
-    2. functions
-    3. display functions
-    4. event listeners
-    5. initialization
+    1. createElementListItem()
+    2. createElementForm()
 
 */
 
@@ -31,62 +28,99 @@ function createElementListItem(tag, id, className){
     listItem.className = "element-list-item generic-container";
     elementListContainer.append(listItem);
 
+    var attributeContainer = document.createElement("div");
+    attributeContainer.className = "element-list-item-attribute";
+    listItem.append(attributeContainer);
+
     var listItemTag = document.createElement("div");
     listItemTag.className = "element-list-item-tag code-variable-tag";
-    listItem.append(listItemTag);
     listItemTag.innerHTML+=tag;
+    attributeContainer.append(listItemTag);
 
-    var attributeContainer = document.createElement("div");
-    attributeContainer.className = "element-list-item-attribute code-line";
-    listItem.append(attributeContainer);
+
 
 
 
     // create id attribute
     var attribute = document.createElement("div");
-    attribute.className = "float-line";
+    attributeContainer.append(attribute)
+    attribute.className = "line-wrap";
     
     // create id attribute name
     var attributeName = document.createElement("span");
-    attributeName.className = "code-constant-attribute";
     attribute.append(attributeName);
-    attributeName.innerHTML+= "id";
+    attributeName.className = "code-constant-attribute";
+    attributeName.innerHTML += "id";
 
-    attribute.innerHTML+="=";
+    attribute.innerHTML += "=";
 
     // create id value
     var attributeValue = document.createElement("span");
-    attributeValue.className = "code-string";
     attribute.append(attributeValue);
-    attributeValue.innerHTML='"'+id+'"'+"&nbsp;";
-
-    // append id attribute
-    attributeContainer.append(attribute)
+    attributeValue.className = "code-string line-wrap";
+    attributeValue.innerHTML = '"'+id+'"';
 
 
-
+    attributeContainer.innerHTML+="\n";
 
 
     // create class attribute
     var attribute = document.createElement("div");
-    attribute.className = "float-line";
+    attributeContainer.append(attribute)
+    attribute.className = "line-wrap";
     
     // create class attribute name
     var attributeName = document.createElement("span");
-    attributeName.className = "code-constant-attribute";
     attribute.append(attributeName);
+    attributeName.className = "code-constant-attribute line-wrap";
     attributeName.innerHTML+= "class";
 
     attribute.innerHTML+="=";
 
     // create class value
     var attributeValue = document.createElement("span");
-    attributeValue.className = "code-string";
     attribute.append(attributeValue);
+    attributeValue.className = "code-string line-wrap";
     attributeValue.innerHTML='"'+className+'"';
 
     // append class attribute
-    attributeContainer.append(attribute)
+
+
+
+
+
+    // create element-list-item-footer
+    var footer = document.createElement("div");
+    listItem.append(footer);
+    footer.className = "element-list-item-footer";
+
+
+    // create button container
+    var buttonContainer = document.createElement("div");
+    footer.append(buttonContainer);
+    buttonContainer.className = "element-list-item-button-container";
+
+    // create plus button
+    var plusButton = document.createElement("input");
+    buttonContainer.append(plusButton);
+    plusButton.className = "element-list-item-button";
+    plusButton.type = "image";
+    plusButton.src = icons.plus;
+
+    // create edit button
+    var editButton = document.createElement("input");
+    buttonContainer.append(editButton);
+    editButton.className = "element-list-item-button";
+    editButton.type = "image";
+    editButton.src = icons.pencil;
+
+    // create delete button
+    var deleteButton = document.createElement("input");
+    buttonContainer.append(deleteButton);
+    deleteButton.className = "element-list-item-button";
+    deleteButton.type = "image";
+    deleteButton.src = icons.trash;
+
 
     return listItem;
 
@@ -108,6 +142,7 @@ function createElementForm(){
 
     // create id input
     var inputContainer = document.createElement("div");
+    form.append(inputContainer);
     inputContainer.className = "element-creation-input-container";
     
     var inputLabel = document.createElement("div");
@@ -131,12 +166,10 @@ function createElementForm(){
 
     inputWrapper.append(input);
 
-    form.append(inputContainer);
-
-
 
     // create class input
     var inputContainer = document.createElement("div");
+    form.append(inputContainer);
     inputContainer.className = "element-creation-input-container";
     
     var inputLabel = document.createElement("div");
@@ -160,7 +193,6 @@ function createElementForm(){
 
     inputWrapper.append(input);
 
-    form.append(inputContainer);
 
     // create half button UI
     var buttonContainer = document.createElement("div");

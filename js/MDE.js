@@ -35,15 +35,21 @@ var creationCancelButton = document.getElementById("element-creation-cancel-butt
 
 var editorPageContent = document.getElementById("editor-page-content");
 
+var icons = {
+    pencil: "img/pencil_icon.png",
+    plus: "img/plus_icon.png",
+    trash: "img/trash_icon.png"
+}
+
 /*#####################################################\
  *|                                                    #
  *| 2. functions                                       #
  *|                                                    #
 \#####################################################*/
 
-// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
-// editorPageContent.append(createElementForm());
+elementListContainer.append(createElementForm());
 
 /*#####################################################\
  *|                                                    #
