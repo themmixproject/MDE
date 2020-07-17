@@ -67,35 +67,52 @@ var icons = {
  *|                                                    #
 \#####################################################*/
 
-elementListContainer.childNodes.forEach(function(item) {
-    if(item.nodeType==1){
-        item.childNodes.forEach(function(container){
-            if(container.className == "half-width-container"){
-                container.childNodes.forEach(function(wrapper){
-                    wrapper.childNodes.forEach(function(listItemButton){
-                        if(listItemButton.nodeType==1){
-                            listItemButton.addEventListener("click", function(){
-                                console.log("you clicked the element-list-item-"+listItemButton.innerHTML+" button!")
-                            });
-                        }
-                    })
-                });
-            }
-        });
-    }
-});
+// elementListContainer.childNodes.forEach(function(item) {
+//     if(item.nodeType==1){
+//         item.childNodes.forEach(function(container){
+//             if(container.className == "half-width-container"){
+//                 container.childNodes.forEach(function(wrapper){
+//                     wrapper.childNodes.forEach(function(listItemButton){
+//                         if(listItemButton.nodeType==1){
+//                             listItemButton.addEventListener("click", function(){
+//                                 console.log("you clicked the element-list-item-"+listItemButton.innerHTML+" button!")
+//                             });
+//                         }
+//                     })
+//                 });
+//             }
+//         });
+//     }
+// });
 
-creationCancelButton.addEventListener("click", function(){
-    console.log("you clicked the element-creation-cancel button!");
-});
+// creationCancelButton.addEventListener("click", function(){
+//     console.log("you clicked the element-creation-cancel button!");
+// });
 
-creationAddButton.addEventListener("click", function(){
-    console.log("you clicked the element-creation-add button!");
-});
+// creationAddButton.addEventListener("click", function(){
+//     console.log("you clicked the element-creation-add button!");
+// });
 
 addElementButton.addEventListener("click", function(){
-    console.log("you clicked the add-element button!");
+    // console.log("you clicked the add-element button!");
+    addElementButton.style.display = "none";
+    editorPageContent.append(createElementForm());
 })
+
+function addFormCancelEvent(button) {
+    button.addEventListener("click", function(){
+        console.log("cancel");
+        button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
+    });
+}
+
+function addFormAddEvent(button, tagInput, idInput, classInput) {
+    button.addEventListener("click", function(){
+        elementListContainer.append(createElementListItem(tagInput.value, idInput.value, classInput.value));
+        button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
+        addElementButton.style.display = "block";
+    });
+}
 
 /*#####################################################\
  *|                                                    #

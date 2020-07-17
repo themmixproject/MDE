@@ -167,7 +167,7 @@ function createElementForm(){
     widthWrapper.append(input);
     input.className = "element-creation-input code-variable-tag";
     input.placeholder = "div";
-
+    var tagInput = input;
 
     // create id input
     var inputContainer = document.createElement("div");
@@ -192,7 +192,7 @@ function createElementForm(){
     var input = document.createElement("input");
     widthWrapper.append(input);
     input.className = "element-creation-input code-string";
-
+    var idInput = input;
 
 
 
@@ -220,6 +220,7 @@ function createElementForm(){
     var input = document.createElement("input");
     widthWrapper.append(input);
     input.className = "element-creation-input code-string";
+    var classInput = input;
 
 
 
@@ -242,7 +243,7 @@ function createElementForm(){
     widthWrapper.append(leftButton);
     leftButton.setAttribute("id", "element-creation-cancel-button");
     leftButton.innerHTML+="cancel";
-
+    addFormCancelEvent(leftButton);
 
     
     // create add button
@@ -256,7 +257,7 @@ function createElementForm(){
 
     rightButton.setAttribute("id", "element-creation-add-button");
     rightButton.innerHTML+="add";
-
+    addFormAddEvent(rightButton, tagInput, idInput, classInput);
 
 
     return form;
