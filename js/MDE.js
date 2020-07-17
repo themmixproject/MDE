@@ -97,12 +97,14 @@ addElementButton.addEventListener("click", function(){
     // console.log("you clicked the add-element button!");
     addElementButton.style.display = "none";
     editorPageContent.append(createElementForm());
+    window.scrollTo(0,document.body.scrollHeight);
 })
 
 function addFormCancelEvent(button) {
     button.addEventListener("click", function(){
         console.log("cancel");
         button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
+        addElementButton.style.display = "block";
     });
 }
 
