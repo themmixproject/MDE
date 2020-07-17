@@ -139,7 +139,7 @@ function createElementForm(){
     // create form header
     var header = document.createElement("div");
     form.append(header);
-    header.className = "element-list-item-header";
+    header.className = "element-creation-header";
     header.innerHTML = "element-creation";
 
 
