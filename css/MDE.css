@@ -24,7 +24,6 @@
 }
 
 .half-width-container {
-    margin: 10px;
     overflow: hidden;
 }
 
@@ -187,10 +186,13 @@ body {
     *|                                                     #
     \#####################################################*/
 
+    #element-creation-form {
+        padding: 10px;
+    }
+
     .element-creation-header {
         font-family: inherit;
         font-weight: inherit;
-        margin: 10px;
         margin-bottom: 0;
         color: rgb(128, 128, 128);
         font-style: italic;
@@ -198,7 +200,8 @@ body {
 
     .element-creation-input-container {
         /* margin: 10px; */
-        margin: 12px 10px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
     .element-creation-input-label {
@@ -230,11 +233,6 @@ body {
         
         background-color: rgb(62, 62, 62);
         /* border: 2px solid rgb(169, 169, 169); */
-    }
-
-    .element-creation-button-container {
-        margin: 10px;
-        overflow: hidden;
     }
 
     .element-creation-button {
