@@ -83,8 +83,6 @@ function createElementListItem(tag, id, className){
     attributeValue.className = "code-string line-wrap";
     attributeValue.innerHTML='"'+className+'"';
 
-    // append class attribute
-
 
 
 
@@ -138,6 +136,37 @@ function createElementForm(){
     form.className = "generic-container";
     form.setAttribute("id", "element-creation-form");
 
+    // create form header
+    var header = document.createElement("div");
+    form.append(header);
+    header.className = "element-list-item-header";
+    header.innerHTML = "element-creation";
+
+
+    // create tag input
+    var inputContainer = document.createElement("div");
+    form.append(inputContainer);
+    inputContainer.className = "element-creation-input-container";
+    
+    var labelContainer = document.createElement("div");
+    inputContainer.append(labelContainer);
+    labelContainer.className = "element-creation-input-label";
+    
+    var labelValue = document.createElement("span");
+    labelContainer.append(labelValue);
+    labelValue.className = "code-variable-tag";
+    labelValue.innerHTML+="tag";
+
+    labelContainer.innerHTML+=" =&nbsp;"
+    
+    var widthWrapper = document.createElement("span");
+    inputContainer.append(widthWrapper);
+    widthWrapper.className = "element-creation-input-width-wrapper";
+
+    var input = document.createElement("input");
+    widthWrapper.append(input);
+    input.className = "element-creation-input code-variable-tag";
+    input.placeholder = "div";
 
 
     // create id input
@@ -145,26 +174,27 @@ function createElementForm(){
     form.append(inputContainer);
     inputContainer.className = "element-creation-input-container";
     
-    var inputLabel = document.createElement("div");
-    inputLabel.className = "element-creation-input-label";
+    var labelContainer = document.createElement("div");
+    inputContainer.append(labelContainer);
+    labelContainer.className = "element-creation-input-label";
     
-    var inputLabelValue = document.createElement("span");
-    inputLabelValue.className = "code-constant-attribute";
-    inputLabelValue.innerHTML+="id";
-    inputLabel.append(inputLabelValue);
+    var labelValue = document.createElement("span");
+    labelContainer.append(labelValue);
+    labelValue.className = "code-constant-attribute";
+    labelValue.innerHTML+="id";
 
-    inputLabel.innerHTML+=" =&nbsp;"
+    labelContainer.innerHTML+=" =&nbsp;"
     
-    inputContainer.append(inputLabel);
-
-    var inputWrapper = document.createElement("span");
-    inputWrapper.className = "element-creation-input-width-wrapper";
-    inputContainer.append(inputWrapper);
+    var widthWrapper = document.createElement("span");
+    inputContainer.append(widthWrapper);
+    widthWrapper.className = "element-creation-input-width-wrapper";
 
     var input = document.createElement("input");
+    widthWrapper.append(input);
     input.className = "element-creation-input code-string";
 
-    inputWrapper.append(input);
+
+
 
 
     // create class input
@@ -172,55 +202,62 @@ function createElementForm(){
     form.append(inputContainer);
     inputContainer.className = "element-creation-input-container";
     
-    var inputLabel = document.createElement("div");
-    inputLabel.className = "element-creation-input-label";
+    var labelContainer = document.createElement("div");
+    inputContainer.append(labelContainer);
+    labelContainer.className = "element-creation-input-label";
     
-    var inputLabelValue = document.createElement("span");
-    inputLabelValue.className = "code-constant-attribute";
-    inputLabelValue.innerHTML+="class";
-    inputLabel.append(inputLabelValue);
+    var labelValue = document.createElement("span");
+    labelContainer.append(labelValue);
+    labelValue.className = "code-constant-attribute";
+    labelValue.innerHTML+="class";
 
-    inputLabel.innerHTML+=" =&nbsp;"
+    labelContainer.innerHTML+=" =&nbsp;"
     
-    inputContainer.append(inputLabel);
-
-    var inputWrapper = document.createElement("span");
-    inputWrapper.className = "element-creation-input-width-wrapper";
-    inputContainer.append(inputWrapper);
+    var widthWrapper = document.createElement("span");
+    inputContainer.append(widthWrapper);
+    widthWrapper.className = "element-creation-input-width-wrapper";
 
     var input = document.createElement("input");
+    widthWrapper.append(input);
     input.className = "element-creation-input code-string";
 
-    inputWrapper.append(input);
 
 
+
+    
     // create half button UI
     var buttonContainer = document.createElement("div");
+    form.append(buttonContainer);
     buttonContainer.className = "half-width-container";
 
-    // create cancel button
-    var buttonWrapper = document.createElement("div");
-    buttonWrapper.className = "half-width-wrapper";
-    buttonContainer.append(buttonWrapper);
 
-    var button = document.createElement("div");
-    button.className = "generic-ui-button half-width-margin-right";
-    buttonWrapper.append(button);
-    button.setAttribute("id", "element-creation-cancel-button");
-    button.innerHTML+="cancel";
 
     // create cancel button
-    var buttonWrapper = document.createElement("div");
-    buttonWrapper.className = "half-width-wrapper";
-    buttonContainer.append(buttonWrapper);
+    var widthWrapper = document.createElement("div");
+    widthWrapper.className = "half-width-wrapper";
+    buttonContainer.append(widthWrapper);
 
-    var button = document.createElement("div");
-    button.className = "generic-ui-button half-width-margin-right";
-    buttonWrapper.append(button);
-    button.setAttribute("id", "element-creation-add-button");
-    button.innerHTML+="add";
+    var leftButton = document.createElement("div");
+    leftButton.className = "element-creation-button generic-ui-button half-width-margin-right";
+    widthWrapper.append(leftButton);
+    leftButton.setAttribute("id", "element-creation-cancel-button");
+    leftButton.innerHTML+="cancel";
 
-    form.append(buttonContainer);
+
+    
+    // create add button
+    var widthWrapper = document.createElement("div");
+    buttonContainer.append(widthWrapper);
+    widthWrapper.className = "half-width-wrapper";
+
+    var rightButton = document.createElement("div");
+    widthWrapper.append(rightButton);
+    rightButton.className = "element-creation-button generic-ui-button half-width-margin-left";
+
+    rightButton.setAttribute("id", "element-creation-add-button");
+    rightButton.innerHTML+="add";
+
+
 
     return form;
 
