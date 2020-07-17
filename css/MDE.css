@@ -148,6 +148,15 @@ body {
     *|                                                     #
     \#####################################################*/
 
+    .element-list-item-header {
+        font-family: inherit;
+        font-weight: inherit;
+        margin: 10px;
+        margin-bottom: 0;
+        color: rgb(128, 128, 128);
+        font-style: italic;
+    }
+
     .element-list-item-tag {
         margin-bottom: 10px;
         /* line-height: 40px; */
@@ -186,15 +195,6 @@ body {
     *| 4.2 element creation form                           #
     *|                                                     #
     \#####################################################*/
-
-    .element-list-item-header {
-        font-family: inherit;
-        font-weight: inherit;
-        margin: 10px;
-        margin-bottom: 0;
-        color: rgb(128, 128, 128);
-        font-style: italic;
-    }
 
     .element-creation-input-container {
         /* margin: 10px; */
