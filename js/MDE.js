@@ -116,12 +116,19 @@ function addFormAddEvent(button, tagInput, idInput, classInput) {
     });
 }
 
+function addListItemDeleteEvent(button) {
+    button.addEventListener("click", function(){
+        button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
+    });
+}
+
 /*#####################################################\
  *|                                                    #
  *| 5. initialization                                  #
  *|                                                    #
 \#####################################################*/
 
+elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
 console.log("MDE.js is loaded!");
 

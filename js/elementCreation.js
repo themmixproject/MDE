@@ -118,6 +118,7 @@ function createElementListItem(tag, id, className){
     deleteButton.className = "element-list-item-button";
     deleteButton.type = "image";
     deleteButton.src = icons.trash;
+    addListItemDeleteEvent(deleteButton);
 
 
     return listItem;
