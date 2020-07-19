@@ -94,10 +94,10 @@ var icons = {
 // });
 
 addElementButton.addEventListener("click", function(){
-    // console.log("you clicked the add-element button!");
-    addElementButton.style.display = "none";
-    editorPageContent.append(createElementForm());
-    window.scrollTo(0,document.body.scrollHeight);
+    console.log("you clicked the add-element button!");
+    // addElementButton.style.display = "none";
+    // editorPageContent.append(createElementForm());
+    // window.scrollTo(0,document.body.scrollHeight);
 })
 
 function addFormCancelEvent(button) {
@@ -128,7 +128,7 @@ function addListItemDeleteEvent(button) {
  *|                                                    #
 \#####################################################*/
 
-elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
 console.log("MDE.js is loaded!");
 
