@@ -141,6 +141,25 @@ body {
     overflow: hidden;
 }
 
+#bottom-form-page-overlay {
+    position: absolute;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2;
+}
+
+#editor-bottom-form-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 3;
+}
+
     /*#####################################################\
     *|                                                     #
     *| 4.1 element list item                               #
@@ -188,6 +207,7 @@ body {
 
     #element-creation-form {
         padding: 10px;
+        margin: 0;
     }
 
     .element-creation-header {
