@@ -264,3 +264,5 @@ function createElementForm(){
     return form;
 
 }
+
+console.log("elementCreation.js is loaded!");
