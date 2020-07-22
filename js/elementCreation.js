@@ -127,7 +127,39 @@ function createElementListItem(tag, id, className){
 
 /*#####################################################\
  *|                                                    #
- *| 2. createElementForm()                             #
+ *| 2. createFormInput()                               #
+ *|                                                    #
+\#####################################################*/
+
+
+function createFormInput(label, tagClass, inputClass) {
+    var inputContainer = document.createElement("div");
+    inputContainer.className = "generic-form-input-container";
+    
+    var labelContainer = document.createElement("div");
+    inputContainer.append(labelContainer);
+    labelContainer.className = "generic-form-input-label";
+    
+    var labelValue = document.createElement("span");
+    labelContainer.append(labelValue);
+    labelValue.className = tagClass;
+    labelValue.innerHTML+=label;
+    
+    var widthWrapper = document.createElement("span");
+    inputContainer.append(widthWrapper);
+    widthWrapper.className = "element-creation-input-width-wrapper";
+
+    var input = document.createElement("input");
+    widthWrapper.append(input);
+    input.className = "generic-form-input " + inputClass;
+    input.placeholder = "tag";
+
+    return [inputContainer, input];
+}
+
+/*#####################################################\
+ *|                                                    #
+ *| 3. createElementForm()                             #
  *|                                                    #
 \#####################################################*/
 
@@ -152,79 +184,16 @@ function createElementForm(){
 
 
     // create tag input
-    var inputContainer = document.createElement("div");
-    form.append(inputContainer);
-    inputContainer.className = "generic-form-input-container";
-    
-    var labelContainer = document.createElement("div");
-    inputContainer.append(labelContainer);
-    labelContainer.className = "generic-form-input-label";
-    
-    var labelValue = document.createElement("span");
-    labelContainer.append(labelValue);
-    labelValue.className = "code-variable-tag";
-    labelValue.innerHTML+="tag";
-    
-    var widthWrapper = document.createElement("span");
-    inputContainer.append(widthWrapper);
-    widthWrapper.className = "element-creation-input-width-wrapper";
-
-    var input = document.createElement("input");
-    widthWrapper.append(input);
-    input.className = "generic-form-input code-variable-tag";
-    input.placeholder = "div";
-    var tagInput = input;
+    var tagInput = createFormInput("tag", "code-variable-tag", "code-variable-tag");
+    form.append(tagInput[0]);
 
     // create id input
-    var inputContainer = document.createElement("div");
-    form.append(inputContainer);
-    inputContainer.className = "generic-form-input-container";
-    
-    var labelContainer = document.createElement("div");
-    inputContainer.append(labelContainer);
-    labelContainer.className = "generic-form-input-label";
-    
-    var labelValue = document.createElement("span");
-    labelContainer.append(labelValue);
-    labelValue.className = "code-constant-attribute";
-    labelValue.innerHTML+="id";
-
-    var widthWrapper = document.createElement("span");
-    inputContainer.append(widthWrapper);
-    widthWrapper.className = "element-creation-input-width-wrapper";
-
-    var input = document.createElement("input");
-    widthWrapper.append(input);
-    input.className = "generic-form-input code-string";
-    var idInput = input;
-
-
-
+    var idInput = createFormInput("id", "code-constant-attribute", "code-string");
+    form.append(idInput[0]);
 
     // create class input
-    var inputContainer = document.createElement("div");
-    form.append(inputContainer);
-    inputContainer.className = "generic-form-input-container";
-    
-    var labelContainer = document.createElement("div");
-    inputContainer.append(labelContainer);
-    labelContainer.className = "generic-form-input-label";
-    
-    var labelValue = document.createElement("span");
-    labelContainer.append(labelValue);
-    labelValue.className = "code-constant-attribute";
-    labelValue.innerHTML+="class";
-    
-    var widthWrapper = document.createElement("span");
-    inputContainer.append(widthWrapper);
-    widthWrapper.className = "element-creation-input-width-wrapper";
-
-    var input = document.createElement("input");
-    widthWrapper.append(input);
-    input.className = "generic-form-input code-string";
-    var classInput = input;
-
-
+    var classInput = createFormInput("class", "code-constant-attribute", "code-string");
+    form.append(classInput[0]);
 
 
     
@@ -259,8 +228,7 @@ function createElementForm(){
 
     rightButton.setAttribute("id", "element-creation-add-button");
     rightButton.innerHTML+="add";
-    addFormAddEvent(rightButton, tagInput, idInput, classInput);
-
+    addFormAddEvent(rightButton, tagInput[1], idInput[1], classInput[1]);
 
     return form;
 
