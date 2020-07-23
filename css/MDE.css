@@ -40,6 +40,11 @@
     margin-right: 5px;
 }
 
+.half-width-button {
+    height: 40px;
+    line-height: 40px;
+}
+
 .generic-ui-button {
     text-align: center;
     /* background-color: rgb(59, 59, 59); */
@@ -73,6 +78,10 @@
     font-weight: bold;
 }
 
+.generic-form-container {
+    padding: 10px;
+}
+
 .generic-form-header {
     font-family: inherit;
     font-weight: inherit;
@@ -93,6 +102,11 @@
 
     font-size: 17px;
     font-weight: bold;
+}
+
+.generic-form-input-width-wrapper {
+    display: block;
+    overflow: hidden;
 }
 
 .generic-form-input {
@@ -262,16 +276,6 @@ body {
         /* margin: 0; */
     }
 
-    .element-creation-input-width-wrapper {
-        display: block;
-        overflow: hidden;
-    }
-
-    .element-creation-button {
-        height: 40px;
-        line-height: 40px;
-    }
-
      /*#####################################################\
     *|                                                     #
     *| 4.3 element edit form                               #
@@ -289,7 +293,8 @@ body {
         overflow-x: visible;
         white-space: nowrap;
         padding-bottom: 10px;
-        margin-bottom: -10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
     
     /*#####################################################\
