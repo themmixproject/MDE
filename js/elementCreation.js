@@ -234,4 +234,104 @@ function createElementForm(){
 
 }
 
+/*#####################################################\
+ *|                                                    #
+ *| 3. createEditForm()                                #
+ *|                                                    #
+\#####################################################*/
+
+function createEditForm(parsedElement) {
+    var form = document.createElement("div");
+    form.className = "generic-container";
+    form.setAttribute("id", "element-creation-form");
+
+    // create form close button
+    var closeButton = document.createElement("input");
+    form.append(closeButton);
+    closeButton.className = "generic-form-close-button generic-ui-icon";
+    closeButton.type = "image";
+    closeButton.src = "img/cross_icon.png";
+
+    // create form header
+    var header = document.createElement("div");
+    form.append(header);
+    header.className = "generic-form-header";
+    header.innerHTML = "edit element";
+
+    // create parent header
+    if(parsedElement.parent != null) {
+        var parentHeader = document.createElement("div");
+        form.append(parentHeader);
+        parentHeader.id = "element-edit-parent";
+        parentHeader.innerHTML+="parent:";
+
+        var tag = document.createElement("span");
+        parentHeader.append(tag);
+        tag.className = "code-variable-tag";
+        tag.innerHTML = parsedElement.tag;
+
+        parentHeader.innerHTML+="&nbsp;"
+
+        var selectors = document.createElement("span");
+        parentHeader.append(selectors);
+        selectors.className = "code-constant-attribute";
+
+        selectors.innerHTML += "#" + parsedElement.id + " ";
+        selectors.innerHTML += "." + parsedElement.className;
+    }
+
+    // create tag input
+    var tagInput = createFormInput("tag", "code-variable-tag", "code-variable-tag");
+    form.append(tagInput[0]);
+    tagInput[1].value = parsedElement.tag;
+
+    // create id input
+    var idInput = createFormInput("id", "code-constant-attribute", "code-string");
+    form.append(idInput[0]);
+    idInput[1].value = parsedElement.id;
+
+    // create class input
+    var classInput = createFormInput("class", "code-constant-attribute", "code-string");
+    form.append(classInput[0]);
+    classInput[1].value = parsedElement.className;
+
+
+    
+    // create half button UI
+    var buttonContainer = document.createElement("div");
+    form.append(buttonContainer);
+    buttonContainer.className = "half-width-container";
+
+
+
+    // create cancel button
+    var widthWrapper = document.createElement("div");
+    widthWrapper.className = "half-width-wrapper";
+    buttonContainer.append(widthWrapper);
+
+    var leftButton = document.createElement("div");
+    leftButton.className = "element-creation-button generic-ui-button half-width-margin-right";
+    widthWrapper.append(leftButton);
+    leftButton.setAttribute("id", "element-creation-cancel-button");
+    leftButton.innerHTML+="cancel";
+    addFormCancelEvent(leftButton);
+
+    
+    // create save button
+    var widthWrapper = document.createElement("div");
+    buttonContainer.append(widthWrapper);
+    widthWrapper.className = "half-width-wrapper";
+
+    var rightButton = document.createElement("div");
+    widthWrapper.append(rightButton);
+    rightButton.className = "element-creation-button generic-ui-button half-width-margin-left";
+
+    rightButton.setAttribute("id", "element-creation-add-button");
+    rightButton.innerHTML+="save";
+    addFormAddEvent(rightButton, tagInput[1], idInput[1], classInput[1]);
+
+    return form;
+
+}
+
 console.log("elementCreation.js is loaded!");
