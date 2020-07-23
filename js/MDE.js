@@ -49,8 +49,8 @@ var icons = {
 
 // elementListContainer.append(createElementListItem("div", "testId", "testClass"))
 
-var myElement = new element("div", "hello", "very-very-long-class")
-elementListContainer.append(createEditForm(myElement));
+// var myElement = new element("div", "hello", "very-very-long-class")
+// elementListContainer.append(createEditForm(myElement));
 
 /*#####################################################\
  *|                                                    #
