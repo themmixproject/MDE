@@ -29,7 +29,7 @@ function createElementListItem(tag, id, className){
     elementListContainer.append(listItem);
 
     var attributeContainer = document.createElement("div");
-    attributeContainer.className = "element-list-item-attribute";
+    attributeContainer.className = "element-list-item-content";
     listItem.append(attributeContainer);
 
     var listItemTag = document.createElement("div");
@@ -83,8 +83,10 @@ function createElementListItem(tag, id, className){
     attributeValue.className = "code-string line-wrap";
     attributeValue.innerHTML='"'+className+'"';
 
-
-
+    // create child container
+    var childContainer = document.createElement("div");
+    listItem.append(childContainer);
+    childContainer.className = "element-list-item-child-container no-children";
 
 
     // create element-list-item-footer
