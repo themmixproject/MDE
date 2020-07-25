@@ -71,7 +71,7 @@
 
 .generic-container {
     background-color: rgb(76, 76, 76);
-    overflow: hidden;
+    /* overflow: hidden; */
     font-size: 20px;
     margin: 5px;
     font-family: 'Courier New', Courier, monospace;
@@ -241,6 +241,7 @@ body {
 
     .element-list-item {
         font-size: 17px;
+        margin-right: 0;
     }
 
     .element-list-item-tag {
@@ -249,10 +250,28 @@ body {
         
     }
 
-    .element-list-item-attribute {
+    .element-list-item-content {
         /* margin: 10px;
         padding: 3px; */
-        margin: 10px;
+        padding: 10px;
+        padding-right: 0;
+        white-space: nowrap;
+        /* background-color: white; */
+    }
+
+    .element-list-item-content.parent {
+        overflow: auto;
+        padding-right: 10px;
+    }
+
+    .element-list-item-child-container {
+        border-left: 1px solid gray;
+        border-bottom: 1px solid gray;
+        margin-left: 10px;
+    }
+
+    .element-list-item-child-container.parent {
+        overflow: auto;
     }
 
     .element-list-item-footer {
