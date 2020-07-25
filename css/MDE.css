@@ -241,7 +241,6 @@ body {
 
     .element-list-item {
         font-size: 17px;
-        margin-right: 0;
     }
 
     .element-list-item-tag {
@@ -254,30 +253,25 @@ body {
         /* margin: 10px;
         padding: 3px; */
         padding: 10px;
-        padding-right: 0;
-        white-space: nowrap;
-        /* background-color: white; */
     }
 
     .element-list-item-content.parent {
-        overflow: auto;
+        /* overflow: auto; */
         padding-right: 10px;
     }
 
     .element-list-item-child-container {
-        border-left: 1px solid gray;
-        border-bottom: 1px solid gray;
+        border-left: 2px solid gray;
+        border-bottom: 2px solid gray;
         margin-left: 10px;
     }
 
-    .element-list-item-child-container.parent {
-        overflow: auto;
+    .element-list-item-child-container.no-children {
+        border: 0;
     }
 
     .element-list-item-footer {
         overflow: hidden;
-        /* padding: 5px; */
-        /* background-color: rgb(59, 59, 59); */
     }
 
     .element-list-item-button-container {
