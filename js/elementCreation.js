@@ -336,4 +336,18 @@ function createEditForm(parsedElement) {
 
 }
 
+function createLeftFormButton(innerText){
+    var button = document.createElement("div");
+    button.className = "half-width-button generic-ui-button half-width-margin-right";
+    button.innerHTML = innerText;
+    return button;
+}
+
+function createRightFormButton(innerText){
+    var button = document.createElement("div");
+    button.className = "half-width-button generic-ui-button half-width-margin-left";
+    button.innerHTML = innerText;
+    return button;
+}
+
 console.log("elementCreation.js is loaded!");

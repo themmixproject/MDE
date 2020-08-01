@@ -17,7 +17,7 @@
 
         <div id="editor-page">
 
-            <!-- <div id="bottom-form-page-overlay"></div> -->
+            <div id="bottom-form-page-overlay"></div>
             
             <header>
                 <nav id="editor-header-nav">
@@ -101,7 +101,7 @@
                 </div>
 
 
-                <div id="element-creation-form" class="generic-container generic-form-container">
+                <!-- <div id="element-creation-form" class="generic-container generic-form-container">
                     <input class="generic-form-close-button generic-ui-icon" type="image" src="img/cross_icon.png"/>
                     <div class="generic-form-header">element creation</div>
                     <div class="generic-form-input-container">
@@ -169,7 +169,7 @@
                         </div>
                     </div>
 
-                </div>
+                </div> -->
 
 
                 <div id="add-element-button" class="generic-ui-button"><img id="add-button-icon" src="img/plus_icon.png"/></div>
@@ -180,6 +180,39 @@
             <div id="editor-bottom-form-container">
                 
                 
+                <div id="form-container" class="generic-container generic-form-container">
+                    <input id="form-close-button" class="generic-form-close-button generic-ui-icon" type="image" src="img/cross_icon.png"/>
+                    <div id="form-header" class="generic-form-header">element creation</div>
+                    <div id="element-edit-parent">parent:<span class="code-variable-tag">div</span>&nbsp;<span class="code-constant-attribute">#hello .very-very-very-very-long-class</span></div>
+                    <div class="generic-form-input-container">
+                        <div class="generic-form-input-label"><span class="code-variable-tag">tag</span></div>
+                        <span class="generic-form-input-width-wrapper">
+                            <input id="tag-input" class="generic-form-input code-variable-tag" type="text" autocapitalize="off" placeholder="tag"/>
+                        </span>
+                    </div>
+                    <div class="generic-form-input-container">
+                        <div class="generic-form-input-label"><span class="code-constant-attribute">id</span></div>
+                        <span class="generic-form-input-width-wrapper">
+                            <input id="id-input" class="generic-form-input code-string" type="text" autocapitalize="off" placeholder="id"/>
+                        </span>
+                    </div>
+                    <div class="generic-form-input-container">
+                        <div class="generic-form-input-label"><span class="code-constant-attribute">class</span></div>
+                        <span class="generic-form-input-width-wrapper">
+                            <input id="class-input" class="generic-form-input code-string" type="text" autocapitalize="off" placeholder="class"/>
+                        </span>
+                    </div>
+
+                    <div class="half-width-container">
+                        <div id="form-left-button-container" class="half-width-wrapper">
+                            <div class="half-width-button generic-ui-button half-width-margin-right">cancel</div>
+                        </div>
+                        <div id="form-right-button-container" class="half-width-wrapper">
+                            <div class="half-width-button generic-ui-button half-width-margin-left">add</div>
+                        </div>
+                    </div>
+
+                </div>
 
 
             </div>
