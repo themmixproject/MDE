@@ -89,7 +89,7 @@ function displayForm(type, element) {
     
     console.log(element);
 
-    if(element.parent !== null) {
+    if(element !== undefined && element.parent !== null) {
         formParentContainer.innerHTML = "";
         formParentContainer.style.display = "block";
         formParentContainer.innerHTML += "parent: ";
@@ -98,19 +98,18 @@ function displayForm(type, element) {
         formParentContainer.style.display = "none";
     }
 
-    if(type == formType.edit) {
-        tagInput.value = element.tag
-        idInput.value = element.id;
-        classInput.value = element.className;
-    }
-
     if(type == formType.create) {
+        formHeader = "element creation"
         leftButton = createLeftFormButton("add");
         leftButton.addEventListener("click", function(){
             console.log("create!");
         });
     }
     else {
+        tagInput.value = element.tag
+        idInput.value = element.id;
+        classInput.value = element.className;
+        formHeader = "edit element"
         leftButton = createLeftFormButton("confirm");
         leftButton.addEventListener("click", function(){
             console.log("edit!");
