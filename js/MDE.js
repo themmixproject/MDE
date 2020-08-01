@@ -170,7 +170,7 @@ function closeForm() {
 
 addElementButton.addEventListener("click", function(){
     console.log("you clicked the add-element button!");
-    displayForm(formType.edit, new element("div", "id", "class"));
+    displayForm(formType.create);
 })
 
 formCloseButton.addEventListener("click", function(){
