@@ -86,8 +86,6 @@ function displayForm(type, element) {
 
     formPageOverLay.style.display = "block";
     formContainer.style.display = "block";
-    
-    console.log(element);
 
     if(element !== undefined && element.parent !== null) {
         formParentContainer.innerHTML = "";
@@ -103,6 +101,8 @@ function displayForm(type, element) {
         leftButton = createLeftFormButton("add");
         leftButton.addEventListener("click", function(){
             console.log("create!");
+            elementListContainer.innerHTML += createElementListItem(tagInput.value, idInput.value, classInput.value);
+            closeForm();
         });
     }
     else {
