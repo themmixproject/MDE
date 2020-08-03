@@ -28,45 +28,58 @@ function createElementListItem(tag, id, className){
     listItem.className = "element-list-item generic-container";
     elementListContainer.append(listItem);
 
+    // create footer
+    var footer = document.createElement("div");
+    footer.className = "element-list-item-footer";
+
+    // create button container
+    var buttonContainer = document.createElement("div");
+    footer.append(buttonContainer);
+    buttonContainer.className = "element-list-item-button-container";
+
     // create plus button
     var plusButton = document.createElement("input");
+    buttonContainer.append(plusButton)
     plusButton.className = "element-list-item-button generic-ui-icon";
     plusButton.type = "image";
     plusButton.src = icons.plus;
+    plusButton.addEventListener("click", function(){
+        console.log("add child");
+    });
 
     // create edit button
     var editButton = document.createElement("input");
+    buttonContainer.append(editButton);
     editButton.className = "element-list-item-button generic-ui-icon";
     editButton.type = "image";
     editButton.src = icons.pencil;
+    editButton.addEventListener("click",function(){
+        console.log("edit element");
+    });
 
     // create delete button
     var deleteButton = document.createElement("input");
+    buttonContainer.append(deleteButton);
     deleteButton.className = "element-list-item-button generic-ui-icon";
     deleteButton.type = "image";
     deleteButton.src = icons.trash;
+    deleteButton.addEventListener("click", function(){
+        console.log("delete element");
+    });
 
 
 
     var baseString = `
-        <div class="element-list-item generic-container">
             <div class="element-list-item-content">
                 <div class="element-list-item-tag code-variable-tag">`+ tag +`</div>
                 <div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"`+ id +`"</div>
                 <div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"`+ className +`"&nbsp;</span></div>
-                
                 <div class="element-list-item-child-container no-children"></div>
-
             </div>
-            <div class="element-list-item-footer">
-                <div class="element-list-item-button-container">
-                    <input class="element-list-item-button generic-ui-icon" type="image" src="img/plus_icon.png"/>
-                    <input class="element-list-item-button generic-ui-icon" type="image" src="img/pencil_icon.png"/>
-                    <input class="element-list-item-button generic-ui-icon" type="image" src="img/trash_icon.png"/>
-                </div>
-            </div>
-        </div>
     `;
+
+    listItem.innerHTML+=baseString;
+    listItem.append(footer);
 
     return baseString;
 

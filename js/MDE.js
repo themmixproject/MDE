@@ -99,11 +99,13 @@ function displayForm(type, element) {
     if(type == formType.create) {
         formHeader = "element creation"
         leftButton = createLeftFormButton("add");
+
         leftButton.addEventListener("click", function(){
             console.log("create!");
-            elementListContainer.innerHTML += createElementListItem(tagInput.value, idInput.value, classInput.value);
+            createElementListItem(tagInput.value, idInput.value, classInput.value);
             closeForm();
         });
+
     }
     else {
         tagInput.value = element.tag
@@ -111,9 +113,11 @@ function displayForm(type, element) {
         classInput.value = element.className;
         formHeader = "edit element"
         leftButton = createLeftFormButton("confirm");
+
         leftButton.addEventListener("click", function(){
             console.log("edit!");
         });
+
     }
 
     rightButton = createRightFormButton("cancel");
