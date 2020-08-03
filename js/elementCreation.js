@@ -79,7 +79,7 @@ function createElementListItem(){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + el.id + '"</div>';
         baseString = baseString + tempString;
     };
-    if(el.class != ""){
+    if(el.className != ""){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + el.className + '"</div>';
         baseString = baseString + tempString;
     };
