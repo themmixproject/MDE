@@ -145,32 +145,6 @@ function closeForm() {
  *|                                                    #
 \#####################################################*/
 
-// elementListContainer.childNodes.forEach(function(item) {
-//     if(item.nodeType==1){
-//         item.childNodes.forEach(function(container){
-//             if(container.className == "half-width-container"){
-//                 container.childNodes.forEach(function(wrapper){
-//                     wrapper.childNodes.forEach(function(listItemButton){
-//                         if(listItemButton.nodeType==1){
-//                             listItemButton.addEventListener("click", function(){
-//                                 console.log("you clicked the element-list-item-"+listItemButton.innerHTML+" button!")
-//                             });
-//                         }
-//                     })
-//                 });
-//             }
-//         });
-//     }
-// });
-
-// creationCancelButton.addEventListener("click", function(){
-//     console.log("you clicked the element-creation-cancel button!");
-// });
-
-// creationAddButton.addEventListener("click", function(){
-//     console.log("you clicked the element-creation-add button!");
-// });
-
 addElementButton.addEventListener("click", function(){
     console.log("you clicked the add-element button!");
     displayForm(formType.create);

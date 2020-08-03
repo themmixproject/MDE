@@ -21,8 +21,9 @@
  *|                                                    #
 \#####################################################*/
 
-function createElementListItem(tag, id, className){
+function createElementListItem(){
 
+     el = new element(tagInput.value, idInput.value, classInput.value);
 
     var listItem = document.createElement("div");
     listItem.className = "element-list-item generic-container";
@@ -70,13 +71,26 @@ function createElementListItem(tag, id, className){
 
 
     var baseString = `
-            <div class="element-list-item-content">
-                <div class="element-list-item-tag code-variable-tag">`+ tag +`</div>
-                <div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"`+ id +`"</div>
-                <div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"`+ className +`"&nbsp;</span></div>
-                <div class="element-list-item-child-container no-children"></div>
-            </div>
+        <div class="element-list-item-content">
+            <div class="element-list-item-tag code-variable-tag">`+ el.tag +`</div>
     `;
+
+    if(el.id != ""){
+        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + el.id + '"</div>';
+        baseString = baseString + tempString;
+    };
+    if(el.class != ""){
+        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + el.className + '"</div>';
+        baseString = baseString + tempString;
+    };
+
+
+
+    tempString = `
+        <div class="element-list-item-child-container no-children"></div>
+    </div>
+    `;
+    baseString = baseString+tempString;
 
     listItem.innerHTML+=baseString;
     listItem.append(footer);
