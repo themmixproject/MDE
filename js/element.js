@@ -11,5 +11,6 @@ function element (elementTag, elementId, elementClass, parent) {
     else {
         this.parent = null;
     }
+    this.childContainer = null;
 }
 console.log("element.js is loaded!");

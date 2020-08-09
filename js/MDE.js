@@ -62,6 +62,8 @@ var formType = {
     create : "create"
 };
 
+var elements = [];
+
 /*#####################################################\
  *|                                                    #
  *| 2. functions                                       #
@@ -175,6 +177,10 @@ function addListItemDeleteEvent(button) {
         button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
     });
 }
+
+elementListContainer.append(createElementListItem(tagInput.value, idInput.value, classInput.value));
+// button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
+// addElementButton.style.display = "block";
 
 /*#####################################################\
  *|                                                    #

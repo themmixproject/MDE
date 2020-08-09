@@ -29,6 +29,10 @@ function createElementListItem(){
     listItem.className = "element-list-item generic-container";
     elementListContainer.append(listItem);
 
+    var content = document.createElement("div");
+    listItem.append(content);
+    content.className = "element-list-item-content";
+
     // create footer
     var footer = document.createElement("div");
     footer.className = "element-list-item-footer";
@@ -44,6 +48,7 @@ function createElementListItem(){
     plusButton.className = "element-list-item-button generic-ui-icon";
     plusButton.type = "image";
     plusButton.src = icons.plus;
+
     plusButton.addEventListener("click", function(){
         console.log("add child");
     });
@@ -71,7 +76,6 @@ function createElementListItem(){
 
 
     var baseString = `
-        <div class="element-list-item-content">
             <div class="element-list-item-tag code-variable-tag">`+ el.tag +`</div>
     `;
 
@@ -84,18 +88,25 @@ function createElementListItem(){
         baseString = baseString + tempString;
     };
 
+    content.innerHTML+=baseString;
+
+    var childContainer = document.createElement("div");
+    content.append(childContainer);
+    element.childContainer = childContainer;
+    childContainer.className = "element-list-item-child-container no-children";
+
+    // tempString = `
+    //     <div class="element-list-item-child-container no-children"></div>
+    // </div>
+    // `;
+    // baseString = baseString+tempString;
 
 
-    tempString = `
-        <div class="element-list-item-child-container no-children"></div>
-    </div>
-    `;
-    baseString = baseString+tempString;
-
-    listItem.innerHTML+=baseString;
     listItem.append(footer);
 
-    return baseString;
+    elements.push(element);
+
+    return listItem;
 
 }
 
