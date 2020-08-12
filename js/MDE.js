@@ -205,9 +205,9 @@ function addListItemDeleteEvent(button) {
  *|                                                    #
 \#####################################################*/
 
-var myElement = createElementListItem("bitch");
+var myElement = createElementListItem("div");
 elementListContainer.append(myElement);
-displayForm(formType.create, elements[0]);
+// displayForm(formType.create, elements[0]);
 
 console.log("MDE.js is loaded!");
 

@@ -80,11 +80,11 @@ function createElementListItem(tag, id, className){
             <div class="element-list-item-tag code-variable-tag">`+ newElement.tag +`</div>
     `;
 
-    if(newElement.id != ""){
+    if(newElement.id !== null){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + newElement.id + '"</div>';
         baseString = baseString + tempString;
     };
-    if(newElement.className != ""){
+    if(newElement.className !== null){
         tempString = '&nbsp;<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + newElement.className + '"</div>';
         baseString = baseString + tempString;
     };
