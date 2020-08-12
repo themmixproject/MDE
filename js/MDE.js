@@ -81,18 +81,36 @@ var elements = [];
  *|                                                    #
 \#####################################################*/
 
-function displayForm(type, element) {
-
+function displayForm(type, parentElement) {
+    
     formLeftButtonContainer.innerHTML = "";
     formRightButtonContainer.innerHTML = "";
 
     formPageOverLay.style.display = "block";
     formContainer.style.display = "block";
 
-    if(element !== undefined && element.parent !== null) {
+    if(parentElement !== undefined && parentElement !== null) {
         formParentContainer.innerHTML = "";
         formParentContainer.style.display = "block";
         formParentContainer.innerHTML += "parent: ";
+        formParentContainer.innerHTML+=`<span class="code-variable-tag">` + parentElement.tag +`</span>`;
+        if(parentElement.id!="" && parentElement.className!="" || parentElement.className!=undefined || element.id != undefined) {
+            formParentContainer.innerHTML+="&nbsp;";
+            attributeContainer = document.createElement("span");
+            formParentContainer.appendChild(attributeContainer);
+            attributeContainer.className = "code-constant-attribute";
+            if(parentElement.id!==null) {
+                attributeContainer.innerHTML+="#"+parentElement.id;
+            };
+            if(parentElement.className!==null) {
+                classNameArray = parentElement.className.split(" ");
+                classString = "";
+                classNameArray.forEach(function(item, index){
+                    classString+=" ."+item;
+                })
+                attributeContainer.innerHTML+=classString;
+            }
+        }
     }
     else {
         formParentContainer.style.display = "none";
@@ -178,7 +196,6 @@ function addListItemDeleteEvent(button) {
     });
 }
 
-elementListContainer.append(createElementListItem(tagInput.value, idInput.value, classInput.value));
 // button.parentNode.parentNode.parentNode.remove(button.parentNode.parentNode);
 // addElementButton.style.display = "block";
 
@@ -188,7 +205,9 @@ elementListContainer.append(createElementListItem(tagInput.value, idInput.value,
  *|                                                    #
 \#####################################################*/
 
-// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+var myElement = createElementListItem("bitch");
+elementListContainer.append(myElement);
+displayForm(formType.create, elements[0]);
 
 console.log("MDE.js is loaded!");
 

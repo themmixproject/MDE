@@ -5,6 +5,12 @@ function element (elementTag, elementId, elementClass, parent) {
     }
     this.id = elementId;
     this.className = elementClass;
+    if(this.id===undefined){
+        this.id=null;
+    }
+    if(this.className===undefined){
+        this.className=null;
+    }
     if(parent) {
         this.parent = parent;
     }

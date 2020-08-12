@@ -21,9 +21,9 @@
  *|                                                    #
 \#####################################################*/
 
-function createElementListItem(){
+function createElementListItem(tag, id, className){
 
-     el = new element(tagInput.value, idInput.value, classInput.value);
+     newElement = new element(tag, id, className);
 
     var listItem = document.createElement("div");
     listItem.className = "element-list-item generic-container";
@@ -51,6 +51,7 @@ function createElementListItem(){
 
     plusButton.addEventListener("click", function(){
         console.log("add child");
+        displayForm(formType.create, newElement);
     });
 
     // create edit button
@@ -76,15 +77,15 @@ function createElementListItem(){
 
 
     var baseString = `
-            <div class="element-list-item-tag code-variable-tag">`+ el.tag +`</div>
+            <div class="element-list-item-tag code-variable-tag">`+ newElement.tag +`</div>
     `;
 
-    if(el.id != ""){
-        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + el.id + '"</div>';
+    if(newElement.id != ""){
+        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + newElement.id + '"</div>';
         baseString = baseString + tempString;
     };
-    if(el.className != ""){
-        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + el.className + '"</div>';
+    if(newElement.className != ""){
+        tempString = '&nbsp;<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + newElement.className + '"</div>';
         baseString = baseString + tempString;
     };
 
@@ -92,7 +93,7 @@ function createElementListItem(){
 
     var childContainer = document.createElement("div");
     content.append(childContainer);
-    element.childContainer = childContainer;
+    newElement.childContainer = childContainer;
     childContainer.className = "element-list-item-child-container no-children";
 
     // tempString = `
@@ -104,7 +105,7 @@ function createElementListItem(){
 
     listItem.append(footer);
 
-    elements.push(element);
+    elements.push(newElement);
 
     return listItem;
 
