@@ -32,6 +32,19 @@ function createElementListItem(parsedElement){
     content.className = "element-list-item-content";
     parsedElement.attributeContainer = content;
 
+    // property container
+    var propertyContainer = document.createElement("div");
+    propertyContainer.className = "element-list-item-property-container";
+    
+
+
+    // attribute container
+    var attributeContainer = document.createElement("div");
+    attributeContainer.className = "element-list-item-attribute-container";
+    if((parsedElement.id === null && parsedElement.id === "") && (parsedElement.className === null && parsedElement.class === "")){
+        attributeContainer.className += " no-attributes";
+    }
+
     // create footer
     var footer = document.createElement("div");
     footer.className = "element-list-item-footer";
@@ -98,9 +111,10 @@ function createElementListItem(parsedElement){
     }
 
 
+    content.append(propertyContainer);
+    propertyContainer.innerHTML+= '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
 
-
-    var baseString = '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
+    var baseString = '';
 
     if(parsedElement.id !== null && parsedElement.id !== ""){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + parsedElement.id + '"</div>';
@@ -115,7 +129,10 @@ function createElementListItem(parsedElement){
         baseString = baseString + tempString;
     };
 
-    content.innerHTML+=baseString;
+    content.append(attributeContainer);
+    parsedElement.attributeContainer = attributeContainer;
+    parsedElement.propertyContainer = propertyContainer;
+    attributeContainer.innerHTML+=baseString;
 
     var childContainer = document.createElement("div");
     content.append(childContainer);

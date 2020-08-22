@@ -17,6 +17,7 @@ function element (elementTag, elementId, elementClass) {
     this.children = [];
     this.childContainer = null;
     this.attributeContainer = null;
+    this.propertyContainer = null;
     this.id.element = null;
     this.className.element = null;
     this.container = null;
@@ -24,9 +25,19 @@ function element (elementTag, elementId, elementClass) {
 
     this.updateAttributes = function(){
         this.attributeContainer.innerHTML = "";
+        this.propertyContainer.innerHTML = ""; 
         
-        var baseString = '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
+        this.propertyContainer.innerHTML += '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
 
+
+        var attributeContainer = document.createElement("div");
+        this.propertyContainer.append(attributeContainer);
+        attributeContainer.className = "element-list-item-attribute-container";
+        if((this.id === null && this.id === "") && (this.className === null && this.class === "")){
+            attributeContainer.className += " no-attributes";
+        }
+
+        baseString = '';
         if(this.id !== null && this.id !== ""){
             tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + this.id + '"</div>';
             baseString = baseString + tempString;

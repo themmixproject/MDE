@@ -250,7 +250,7 @@ body {
     }
 
     .element-list-item-tag {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
         /* line-height: 40px; */
         
     }
@@ -267,10 +267,18 @@ body {
         padding-right: 10px;
     }
 
+    .element-list-item-attribute-container{
+        margin-top: 5px;
+    }
+
+    .element-list-item-attribute-container.no-attributes{
+        margin-top: 0;
+    }
+
     .element-list-item-child-container {
         border-left: 2px solid gray;
         border-bottom: 2px solid gray;
-        margin-left: 10px;
+        /* margin-left: 10px; */
     }
 
     .element-list-item-child-container.no-children {
