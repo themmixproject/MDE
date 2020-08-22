@@ -70,10 +70,18 @@ var elements = [];
  *|                                                    #
 \#####################################################*/
 
-// elementListContainer.append(createElementListItem("div", "testId", "testClass"))
+function createElement(tag, id, className, parent){
+    newElement = new element(tag, id, className);
+    if(parent==undefined){
+        elements.push(newElement);
+    }
+    else{
+        newElement.parent = parent;
+        parent.children.push(newElement);
+    }
 
-// var myElement = new element("div", "hello", "very-very-long-class")
-// elementListContainer.append(createEditForm(myElement));
+    return newElement;
+}
 
 /*#####################################################\
  *|                                                    #
@@ -81,8 +89,10 @@ var elements = [];
  *|                                                    #
 \#####################################################*/
 
-function displayForm(type, parentElement) {
+function displayForm(type, parsedElement, parentElement) {
     
+    console.log(parentElement);
+
     formLeftButtonContainer.innerHTML = "";
     formRightButtonContainer.innerHTML = "";
 
@@ -120,22 +130,37 @@ function displayForm(type, parentElement) {
         formHeader = "element creation"
         leftButton = createLeftFormButton("add");
 
-        leftButton.addEventListener("click", function(){
-            console.log("create!");
-            createElementListItem(tagInput.value, idInput.value, classInput.value);
-            closeForm();
-        });
+        if(parentElement==undefined){
+            leftButton.addEventListener("click", function(){
+                console.log("create!");
+                var newElement = new element(tagInput.value, idInput.value, classInput.value);
+                elementListContainer.append(createElementListItem(newElement));
+                closeForm();
+            });
+        }
+        else{
+            leftButton.addEventListener("click", function(){
+                newElement = createElement(tagInput.value, idInput.value, classInput.value, parentElement);
+                parentElement.childContainer.append(createElementListItem(newElement));
+                parentElement.childContainer.className = "element-list-item-child-container";
+            });
+        }
 
     }
     else {
-        tagInput.value = element.tag
-        idInput.value = element.id;
-        classInput.value = element.className;
+        tagInput.value = parsedElement.tag
+        idInput.value = parsedElement.id;
+        classInput.value = parsedElement.className;
         formHeader = "edit element"
         leftButton = createLeftFormButton("confirm");
 
         leftButton.addEventListener("click", function(){
             console.log("edit!");
+            parsedElement.tag = tagInput.value;
+            parsedElement.id = idInput.value;
+            parsedElement.className = classInput.value;
+            parsedElement.updateAttributes();
+            closeForm();
         });
 
     }
@@ -205,9 +230,8 @@ function addListItemDeleteEvent(button) {
  *|                                                    #
 \#####################################################*/
 
-var myElement = createElementListItem("div");
+var myElement = createElementListItem(createElement("div", "asdf", "adsf"));
 elementListContainer.append(myElement);
-// displayForm(formType.create, elements[0]);
 
 console.log("MDE.js is loaded!");
 

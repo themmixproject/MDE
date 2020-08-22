@@ -21,17 +21,15 @@
  *|                                                    #
 \#####################################################*/
 
-function createElementListItem(tag, id, className){
-
-     newElement = new element(tag, id, className);
+function createElementListItem(parsedElement){
 
     var listItem = document.createElement("div");
     listItem.className = "element-list-item generic-container";
-    elementListContainer.append(listItem);
 
     var content = document.createElement("div");
     listItem.append(content);
     content.className = "element-list-item-content";
+    parsedElement.attributeContainer = content;
 
     // create footer
     var footer = document.createElement("div");
@@ -51,7 +49,7 @@ function createElementListItem(tag, id, className){
 
     plusButton.addEventListener("click", function(){
         console.log("add child");
-        displayForm(formType.create, newElement);
+        displayForm(formType.create, null, parsedElement);
     });
 
     // create edit button
@@ -60,16 +58,20 @@ function createElementListItem(tag, id, className){
     editButton.className = "element-list-item-button generic-ui-icon";
     editButton.type = "image";
     editButton.src = icons.pencil;
+
     editButton.addEventListener("click",function(){
         console.log("edit element");
+        displayForm(formType.edit, parsedElement);
     });
 
+    
     // create delete button
     var deleteButton = document.createElement("input");
     buttonContainer.append(deleteButton);
     deleteButton.className = "element-list-item-button generic-ui-icon";
     deleteButton.type = "image";
     deleteButton.src = icons.trash;
+
     deleteButton.addEventListener("click", function(){
         console.log("delete element");
     });
@@ -80,12 +82,16 @@ function createElementListItem(tag, id, className){
             <div class="element-list-item-tag code-variable-tag">`+ newElement.tag +`</div>
     `;
 
-    if(newElement.id !== null){
-        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + newElement.id + '"</div>';
+    if(parsedElement.id !== null && parsedElement.id !== ""){
+        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + parsedElement.id + '"</div>';
         baseString = baseString + tempString;
     };
-    if(newElement.className !== null){
-        tempString = '&nbsp;<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + newElement.className + '"</div>';
+    if((parsedElement.id !== null && parsedElement.id !== "") && (parsedElement.className !== null && parsedElement.class !== "")){
+        tempString = "&nbsp;";
+        baseString = baseString + tempString;
+    }
+    if(parsedElement.className !== null && parsedElement.className !== ""){
+        tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">class</span>=<span class="code-string line-wrap">"' + parsedElement.className + '"</div>';
         baseString = baseString + tempString;
     };
 
@@ -93,7 +99,7 @@ function createElementListItem(tag, id, className){
 
     var childContainer = document.createElement("div");
     content.append(childContainer);
-    newElement.childContainer = childContainer;
+    parsedElement.childContainer = childContainer;
     childContainer.className = "element-list-item-child-container no-children";
 
     // tempString = `
@@ -104,8 +110,6 @@ function createElementListItem(tag, id, className){
 
 
     listItem.append(footer);
-
-    elements.push(newElement);
 
     return listItem;
 
