@@ -79,7 +79,6 @@ function createElement(tag, id, className, parent){
         newElement.parent = parent;
         parent.children.push(newElement);
     }
-
     return newElement;
 }
 
@@ -91,8 +90,6 @@ function createElement(tag, id, className, parent){
 
 function displayForm(type, parsedElement, parentElement) {
     
-    console.log(parentElement);
-
     formLeftButtonContainer.innerHTML = "";
     formRightButtonContainer.innerHTML = "";
 
@@ -230,8 +227,13 @@ function addListItemDeleteEvent(button) {
  *|                                                    #
 \#####################################################*/
 
+console.log("MDE.js is loaded!");
+
 var myElement = createElementListItem(createElement("div", "asdf", "adsf"));
 elementListContainer.append(myElement);
 
-console.log("MDE.js is loaded!");
+var myElement = createElement("div", "asdf", "adsf2");
+var listItem = createElementListItem(myElement);
+elementListContainer.append(listItem);
+myElement.childContainer.append(createElementListItem(createElement("div", "", "shoot", myElement)));
 

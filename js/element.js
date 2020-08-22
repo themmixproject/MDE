@@ -19,6 +19,7 @@ function element (elementTag, elementId, elementClass) {
     this.attributeContainer = null;
     this.id.element = null;
     this.className.element = null;
+    this.container = null;
 
 
     this.updateAttributes = function(){

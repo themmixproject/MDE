@@ -25,6 +25,7 @@ function createElementListItem(parsedElement){
 
     var listItem = document.createElement("div");
     listItem.className = "element-list-item generic-container";
+    parsedElement.container = listItem;
 
     var content = document.createElement("div");
     listItem.append(content);
@@ -72,15 +73,34 @@ function createElementListItem(parsedElement){
     deleteButton.type = "image";
     deleteButton.src = icons.trash;
 
-    deleteButton.addEventListener("click", function(){
-        console.log("delete element");
-    });
+    if(parsedElement.parent==null){
+        deleteButton.addEventListener("click", function(){
+            console.log("delete element");
+            parsedElement.container.outerHTML = "";
+            console.log(elements);
+            var index = elements.indexOf(parsedElement);
+            if (index > -1) {
+                elements.splice(index, 1);
+            }
+            console.log(elements);
+        });
+    }
+    else{
+        deleteButton.addEventListener("click", function(){
+            parsedElement.container.outerHTML = "";
+            console.log(elements);
+            var index = parsedElement.parent.children.indexOf(parsedElement);
+            if (index > -1) {
+                parsedElement.parent.children.splice(index, 1);
+            }
+            console.log(elements);
+        });
+    }
 
 
 
-    var baseString = `
-            <div class="element-list-item-tag code-variable-tag">`+ newElement.tag +`</div>
-    `;
+
+    var baseString = '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
 
     if(parsedElement.id !== null && parsedElement.id !== ""){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + parsedElement.id + '"</div>';
@@ -99,8 +119,8 @@ function createElementListItem(parsedElement){
 
     var childContainer = document.createElement("div");
     content.append(childContainer);
-    parsedElement.childContainer = childContainer;
     childContainer.className = "element-list-item-child-container no-children";
+    parsedElement.childContainer = childContainer;
 
     // tempString = `
     //     <div class="element-list-item-child-container no-children"></div>
