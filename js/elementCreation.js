@@ -100,6 +100,9 @@ function createElementListItem(parsedElement){
             if (index > -1) {
                 parsedElement.parent.children.splice(index, 1);
             }
+            if(parsedElement.parent.children.length == 0){
+                parsedElement.parent.childContainer.className = "element-list-item-child-container no-children";
+            }
         });
     }
 
@@ -122,7 +125,7 @@ function createElementListItem(parsedElement){
         baseString = baseString + tempString;
     };
 
-    content.append(attributeContainer);
+    propertyContainer.append(attributeContainer);
     parsedElement.attributeContainer = attributeContainer;
     parsedElement.propertyContainer = propertyContainer;
     attributeContainer.innerHTML+=baseString;

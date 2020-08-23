@@ -139,6 +139,7 @@ function displayForm(type, parsedElement, parentElement) {
                 newElement = createElement(tagInput.value, idInput.value, classInput.value, parentElement);
                 parentElement.childContainer.append(createElementListItem(newElement));
                 parentElement.childContainer.className = "element-list-item-child-container";
+                closeForm();
             });
         }
 
