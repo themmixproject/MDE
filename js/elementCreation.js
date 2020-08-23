@@ -112,7 +112,7 @@ function createElementListItem(parsedElement){
 
 
     content.append(propertyContainer);
-    propertyContainer.innerHTML+= '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
+    propertyContainer.innerHTML+= '<div class="element-list-item-tag code-variable-tag">'+ parsedElement.tag +'</div>';
 
     var baseString = '';
 

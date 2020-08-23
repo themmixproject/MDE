@@ -349,3 +349,20 @@ body {
         display: block;
         margin: 0 auto;
     }
+
+/*#####################################################\
+ *|                                                    #
+ *| 1. general classes                                 #
+ *|                                                    #
+\#####################################################*/
+
+#media-loader{
+    display: none;
+    height: 0px;
+    width: 0px;
+}
+
+.load-img{
+    height: 0px;
+    width: 0px;
+}
