@@ -101,15 +101,15 @@ function displayForm(type, parsedElement, parentElement) {
         formParentContainer.style.display = "block";
         formParentContainer.innerHTML += "parent: ";
         formParentContainer.innerHTML+=`<span class="code-variable-tag">` + parentElement.tag +`</span>`;
-        if(parentElement.id!="" && parentElement.className!="" || parentElement.className!=undefined || element.id != undefined) {
-            formParentContainer.innerHTML+="&nbsp;";
+        if(parentElement !== undefined) {
             attributeContainer = document.createElement("span");
             formParentContainer.appendChild(attributeContainer);
             attributeContainer.className = "code-constant-attribute";
-            if(parentElement.id!==null) {
-                attributeContainer.innerHTML+="#"+parentElement.id;
+
+            if((parentElement.id !== null && parentElement.id !== "")) {
+                attributeContainer.innerHTML+=" #"+parentElement.id;
             };
-            if(parentElement.className!==null) {
+            if(parentElement.className !== null && parentElement.class !== "") {
                 classNameArray = parentElement.className.split(" ");
                 classString = "";
                 classNameArray.forEach(function(item, index){
@@ -129,7 +129,6 @@ function displayForm(type, parsedElement, parentElement) {
 
         if(parentElement==undefined){
             leftButton.addEventListener("click", function(){
-                console.log("create!");
                 var newElement = new element(tagInput.value, idInput.value, classInput.value);
                 elementListContainer.append(createElementListItem(newElement));
                 closeForm();
@@ -152,7 +151,6 @@ function displayForm(type, parsedElement, parentElement) {
         leftButton = createLeftFormButton("confirm");
 
         leftButton.addEventListener("click", function(){
-            console.log("edit!");
             parsedElement.tag = tagInput.value;
             parsedElement.id = idInput.value;
             parsedElement.className = classInput.value;
@@ -188,7 +186,6 @@ function closeForm() {
 \#####################################################*/
 
 addElementButton.addEventListener("click", function(){
-    console.log("you clicked the add-element button!");
     displayForm(formType.create);
 })
 
@@ -229,11 +226,11 @@ function addListItemDeleteEvent(button) {
 
 console.log("MDE.js is loaded!");
 
-// var myElement = createElementListItem(createElement("div", "asdf", "adsf"));
-// elementListContainer.append(myElement);
+var myElement = createElementListItem(createElement("div", "asdf", "adsf"));
+elementListContainer.append(myElement);
 
-// var myElement = createElement("div", "asdf", "adsf2");
-// var listItem = createElementListItem(myElement);
-// elementListContainer.append(listItem);
-// myElement.childContainer.append(createElementListItem(createElement("div", "", "shoot", myElement)));
+var myElement = createElement("div", "asdf", "adsf2");
+var listItem = createElementListItem(myElement);
+elementListContainer.append(listItem);
+myElement.childContainer.append(createElementListItem(createElement("div", "", "shoot", myElement)));
 

@@ -62,7 +62,6 @@ function createElementListItem(parsedElement){
     plusButton.src = icons.plus;
 
     plusButton.addEventListener("click", function(){
-        console.log("add child");
         displayForm(formType.create, null, parsedElement);
     });
 
@@ -74,7 +73,6 @@ function createElementListItem(parsedElement){
     editButton.src = icons.pencil;
 
     editButton.addEventListener("click",function(){
-        console.log("edit element");
         displayForm(formType.edit, parsedElement);
     });
 
@@ -88,25 +86,20 @@ function createElementListItem(parsedElement){
 
     if(parsedElement.parent==null){
         deleteButton.addEventListener("click", function(){
-            console.log("delete element");
             parsedElement.container.outerHTML = "";
-            console.log(elements);
             var index = elements.indexOf(parsedElement);
             if (index > -1) {
                 elements.splice(index, 1);
             }
-            console.log(elements);
         });
     }
     else{
         deleteButton.addEventListener("click", function(){
             parsedElement.container.outerHTML = "";
-            console.log(elements);
             var index = parsedElement.parent.children.indexOf(parsedElement);
             if (index > -1) {
                 parsedElement.parent.children.splice(index, 1);
             }
-            console.log(elements);
         });
     }
 
