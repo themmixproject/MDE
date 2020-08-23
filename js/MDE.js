@@ -132,6 +132,7 @@ function displayForm(type, parsedElement, parentElement) {
                 var newElement = new element(tagInput.value, idInput.value, classInput.value);
                 elementListContainer.append(createElementListItem(newElement));
                 closeForm();
+                window.scrollTo(0,document.body.scrollHeight);
             });
         }
         else{
