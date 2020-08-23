@@ -226,12 +226,3 @@ function addListItemDeleteEvent(button) {
 \#####################################################*/
 
 console.log("MDE.js is loaded!");
-
-var myElement = createElementListItem(createElement("div", "asdf", "adsf"));
-elementListContainer.append(myElement);
-
-var myElement = createElement("div", "asdf", "adsf2");
-var listItem = createElementListItem(myElement);
-elementListContainer.append(listItem);
-myElement.childContainer.append(createElementListItem(createElement("div", "", "shoot", myElement)));
-
