@@ -217,7 +217,7 @@ body {
 
 #bottom-form-page-overlay {
     display: none;
-    position: absolute;
+    position: fixed;
     width: 100%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;

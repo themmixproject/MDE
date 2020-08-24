@@ -27,7 +27,7 @@ function element (elementTag, elementId, elementClass) {
         this.attributeContainer.innerHTML = "";
         this.propertyContainer.innerHTML = ""; 
         
-        this.propertyContainer.innerHTML += '<div class="element-list-item-tag code-variable-tag">'+ newElement.tag +'</div>';
+        this.propertyContainer.innerHTML += '<div class="element-list-item-tag code-variable-tag">'+ this.tag +'</div>';
 
 
         var attributeContainer = document.createElement("div");
