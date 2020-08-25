@@ -96,7 +96,7 @@ function displayForm(type, parsedElement, parentElement) {
     formPageOverLay.style.display = "block";
     formContainer.style.display = "block";
 
-    if(parentElement !== undefined && parentElement !== null) {
+    if(parentElement !== undefined) {
         formParentContainer.innerHTML = "";
         formParentContainer.style.display = "block";
         formParentContainer.innerHTML += "parent: ";
@@ -106,10 +106,12 @@ function displayForm(type, parsedElement, parentElement) {
             formParentContainer.appendChild(attributeContainer);
             attributeContainer.className = "code-constant-attribute";
 
-            if((parentElement.id !== null && parentElement.id !== "")) {
+            if(parentElement.id !== "") {
                 attributeContainer.innerHTML+=" #"+parentElement.id;
             };
-            if(parentElement.className !== null && parentElement.class !== "") {
+            console.log(parentElement.className);
+            console.log(parentElement.class !== "");
+            if(parentElement.className !== "") {
                 classNameArray = parentElement.className.split(" ");
                 classString = "";
                 classNameArray.forEach(function(item, index){

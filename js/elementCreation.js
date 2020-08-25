@@ -41,7 +41,7 @@ function createElementListItem(parsedElement){
     // attribute container
     var attributeContainer = document.createElement("div");
     attributeContainer.className = "element-list-item-attribute-container";
-    if((parsedElement.id === null && parsedElement.id === "") && (parsedElement.className === null && parsedElement.class === "")){
+    if((parsedElement.id === "") && parsedElement.class === ""){
         attributeContainer.className += " no-attributes";
     }
 
@@ -112,11 +112,11 @@ function createElementListItem(parsedElement){
 
     var baseString = '';
 
-    if(parsedElement.id !== null && parsedElement.id !== ""){
+    if(parsedElement.id !== ""){
         tempString = '<div class="line-wrap"><span class="code-constant-attribute line-wrap">id</span>=<span class="code-string line-wrap">"' + parsedElement.id + '"</div>';
         baseString = baseString + tempString;
     };
-    if((parsedElement.id !== null && parsedElement.id !== "") && (parsedElement.className !== null && parsedElement.class !== "")){
+    if(parsedElement.id !== "" && parsedElement.class !== ""){
         tempString = "&nbsp;";
         baseString = baseString + tempString;
     }
